@@ -47,7 +47,7 @@ class App extends Component {
       ]
     }))
   }
-
+ 
   // removeTimer updates state, removing any timer that matches the provided author
   removeTimer = id => {
     this.setState(prevState => ({
@@ -57,12 +57,15 @@ class App extends Component {
 
   updateIntervalSetting = increment => {
     this.setState(prevState => {
+      console.log(prevState)
       if (prevState.updateInterval + increment <= 1) return { updateInterval: 1 }
       return {
         updateInterval: prevState.updateInterval + increment
       }
     })
   }
+
+  
 
 }
 

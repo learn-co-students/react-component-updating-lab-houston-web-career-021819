@@ -14,8 +14,8 @@ class Timer extends Component {
 
 
   //Your code here
-
-
+  
+ 
 
   componentDidMount() {
     this.interval = setInterval(this.clockTick, this.props.updateInterval*1000)
@@ -23,6 +23,10 @@ class Timer extends Component {
 
   componentWillUnmount() {
     clearInterval(this.interval)
+  }
+
+  shouldComponentUpdate(nextState){
+    return true
   }
 
   render() {
@@ -56,7 +60,9 @@ class Timer extends Component {
     this.props.removeTimer(this.props.id)
   }
 
-
+  componentDidUpdate(prevState){
+    console.log(prevState)
+  }
 }
 
 export default Timer;
